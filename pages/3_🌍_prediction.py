@@ -11,9 +11,9 @@ def load_encoded():
     df_encoded=pd.read_csv('encoded_data1.csv')
     return df_encoded
 def load_model():
-    model= load(open(r'C:\Users\HP\Desktop\Hakathon\decision_tree.pickle','rb'))
-    scaler=load(open(r'C:\Users\HP\Desktop\Hakathon\scaler.pickle', 'rb'))
-    return model,scaler
+    model= load(open('decision_tree.pickle','rb'))
+    scaler=load(open('scaler.pickle', 'rb'))
+    return model, scaler
 df=load_data()
 df_encoded=load_encoded()
 plant = st.selectbox('select crop', (sorted(df.label.unique())))
